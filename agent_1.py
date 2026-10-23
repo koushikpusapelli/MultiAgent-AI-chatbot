@@ -18,7 +18,7 @@ if not google_api_key:
 
 # "gemini-1.5-flash" is a good
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-3.8-flash",
     google_api_key=google_api_key,
    
 )
