@@ -52,7 +52,9 @@ def agent_1(image_path, context_text=""):
     if "Error analyzing image" in image_labels:
          # Handle the error appropriately, maybe return an error message
          return "Could not analyze the image. Please describe the issue or try uploading again."
-
+    except Exception as e:
+    print(f"Error analyzing image with Vision API: {e}")
+    return f"Vision API error: {e}"
     prompt = f"The image shows labels: {image_labels}. The user says: '{context_text}'. Based on the image labels and the user's text, what issue could this be, and what should they do?"
     
     response = llm.invoke(prompt)
